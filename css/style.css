@@ -1,7 +1,50 @@
+/* ! GENERALI */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: rgb(214,219,215);
+    background: linear-gradient(0deg, rgba(214,219,215,1) 80%, rgba(0,151,136,1) 80%);
+}
+
+.container {
+    width: 1200px;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: lightgreen;
+}
+
+header {
+    height: 70px;
+    background-color: tomato;
+}
+
+aside {
+    width: 30%;
+    height: calc(100% - 70px);
+    background-color: grey;
+}
+
+section {
+    width: 70%;
+    height: calc(100% - 70px);
+}
+
+main {
+    height: calc(100% - 70px);
+    background-color: skyblue;
+}
+
+footer {
+    height: 70px;
+    background-color: gold;
+}
+
+.float-left {
+    float: left;
 }
 
 .clearfix::after {
