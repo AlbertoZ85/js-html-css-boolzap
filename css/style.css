@@ -10,37 +10,64 @@ body {
     background: linear-gradient(0deg, rgba(214,219,215,1) 80%, rgba(0,151,136,1) 80%);
 }
 
+/* ! CONTAINER */
 .container {
     width: 1200px;
     height: 90vh;
     margin: 5vh auto;
-    background-color: lightgreen;
 }
 
-header {
-    height: 70px;
-    background-color: tomato;
-}
-
-aside {
+/* ! ASIDE */
+#aside {
     width: 30%;
-    height: calc(100% - 70px);
+    height: 100%;
+    border-right: 1px solid lightgrey;
     background-color: grey;
 }
 
-section {
-    width: 70%;
-    height: calc(100% - 70px);
-}
-
-main {
-    height: calc(100% - 70px);
-    background-color: skyblue;
-}
-
-footer {
+/* ! HEADER */
+.header {
     height: 70px;
-    background-color: gold;
+    background-color: #eaeaea;
+}
+
+/* ! NOTIFICATIONS */
+#notifications {
+    height: 70px;
+    background-color: #8edafc;
+}
+
+/* ! SEARCH BAR */
+#search-bar {
+    height: 40px;
+    background-color: #fafafa;
+}
+
+/* ! CONTACTS */
+#contacts {
+    height: calc(100% - (70px + 70px + 40px));
+    background-color: white;
+    overflow-y: scroll;
+}
+
+/* ! CHAT */
+#chat {
+    width: 70%;
+    height: 100%;
+}
+
+/* ! MAIN */
+#main {
+    height: calc(100% - (70px + 70px));
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+/* ! FOOTER */
+#footer {
+    height: 70px;
+    background-color: #f4efe9;
 }
 
 .float-left {
