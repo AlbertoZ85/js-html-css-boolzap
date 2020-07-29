@@ -1,4 +1,4 @@
-/* ! GENERALI */
+/* ! GENERALS */
 * {
     margin: 0;
     padding: 0;
@@ -21,20 +21,12 @@ body {
     background: linear-gradient(0deg, rgba(214,219,215,1) 80%, rgba(0,151,136,1) 80%);
 }
 
-/* ! TYPOGRAPHY */
-i {
-    font-size: 22px;
-    color: #b1b1b1;
-}
-
-/* ! CONTAINER */
 .container {
     width: 1200px;
     height: 90vh;
     margin: 5vh auto;
 }
 
-/* ! ASIDE */
 #aside {
     width: 35%;
     height: 100%;
@@ -42,7 +34,61 @@ i {
     background-color: grey;
 }
 
-/* ! HEADER */
+#notifications {
+    height: 70px;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+}
+
+#search-bar {
+    height: 40px;
+    padding: 5px 7.5px;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#contacts-section {
+    height: calc(100% - (70px + 70px + 40px));
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#chat {
+    width: 65%;
+    height: 100%;
+}
+
+#main {
+    height: calc(100% - (70px + 70px));
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+#footer {
+    height: 70px;
+    background-color: #f3eeea;
+    display: flex;
+    align-items: center;
+}
+/* --- */
+
+/* ! TYPOGRAPHY */
+i {
+    font-size: 22px;
+    color: #b1b1b1;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+/* --- */
+
+/* ! ASIDE */
+/* ! HEADERS*/
 .header {
     height: 70px;
     padding: 10px;
@@ -52,11 +98,14 @@ i {
     align-items: center;
 }
 
-.header img {
-    height: 100%;
+.header img, .contact-box img {
     margin-right: 15px;
     border-radius: 50%;
     background-color: #f2f2f2;
+}
+
+.header img {
+    height: 100%;
 }
 
 .header-icons {
@@ -68,59 +117,138 @@ i {
 }
 
 /* ! NOTIFICATIONS */
-#notifications {
-    height: 70px;
-    background-color: #8edafc;
+.bell-icon {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.bell-icon i {
+    font-size: 20px;
+    color: #8edafc;
+}
+
+.activate-desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activate-desktop p {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.activate-desktop a {
+    font-size: 14px;
+    color: grey;
+}
+
+.activate-desktop a:hover {
+    color: royalblue;
 }
 
 /* ! SEARCH BAR */
-#search-bar {
-    height: 40px;
-    background-color: #fafafa;
+#search-bar i {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+}
+
+/* ! SEARCH INPUT */
+#search-input {
+    flex-grow: 1;
+    height: 30px;
+    padding: 5px 55px;
+    border: none;
+    transition: 0.1s ease;
+}
+
+#search-input:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
 }
 
 /* ! CONTACTS */
-#contacts {
-    height: calc(100% - (70px + 70px + 40px));
-    background-color: white;
-    overflow-y: scroll;
+.contact-box {
+    padding: 8px 20px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-box.active {
+    background-color: #e9ebea;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact img {
+    height: 60px;
+}
+
+.contact-message, .last-time  {
+    color: #b1b1b1;
+}
+
+.contact-message {
+    font-size: 14px;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.last-time {
+    font-size: 12px;
 }
 
 /* ! CHAT */
-#chat {
-    width: 65%;
-    height: 100%;
-}
-
 .recipient {
     height: 100%;
     display: flex;
 }
 
-.recipient-details {
+.recipient-details, .contact-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .contact-name {
+    font-size: 15px;
     font-weight: 700;
 }
 
 .last-seen {
-    color: #b1b1b1;
+    font-size: 14px;
+    color: grey;
 }
 
 /* ! MAIN */
-#main {
-    height: calc(100% - (70px + 70px));
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-    background-size: cover;
-    overflow-y: scroll;
-}
+
 
 /* ! FOOTER */
-#footer {
-    height: 70px;
-    background-color: #f4efe9;
+#footer i {
+    padding: 0 25px;
+    color: #6b7376;
+}
+
+#footer input {
+    flex-grow: 1;
+    height: 50px;
+    padding: 10px;
+    border: none;
+}
+
+#footer input::placeholder {
+    font-size: 15px;
 }
