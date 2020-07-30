@@ -36,7 +36,7 @@
             <!-- SEARCH BAR -->
             <div id="search-bar">
                 <a href="#"><i class="fas fa-search"></i></a>
-                <input id="search-input" type="text" value="" placeholder="Cerca o inizia una nuova chat">
+                <input id="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- CONTACTS -->
             <div id="contacts-section">
@@ -152,12 +152,12 @@
             <!-- MAIN -->
             <div id="main" class="clearfix">
                 <!-- ! SENT MESSAGE -->
-                <div class="message sent">
+                <div class="message received">
                     <p class="message-text">Ciao, come stai? Volevo chiederti di passarmi gli appunti della lezione di stamattina, se non ti dispiace</p>
                     <p class="message-time">12:50</p>
                 </div>
                 <!-- ! RECEIVED MESSAGE -->
-                <div class="message received">
+                <div class="message sent">
                     <p class="message-text">Ciao! Bene, grazie, e tu? Ah giusto, eri impegnato stamattina. Sì certo, adesso te li passo</p>
                     <p class="message-time">12:50</p>
                 </div>
@@ -165,9 +165,17 @@
             <!-- FOOTER -->
             <div id="footer">
                 <a href="#"><i class="far fa-smile"></i></a>
-                <input type="text" value="" placeholder="Scrivi un messaggio">
-                <a href="#"><i class="fas fa-microphone"></i></a>
+                <input id="text-input" type="text" placeholder="Scrivi un messaggio">
+                <a href="#"><i id="mic" class="fas fa-microphone"></i></a>
             </div>
+        </div>
+    </div>
+
+    <!-- ! TEMPLATE -->
+    <div class="template">
+        <div class="message">
+            <p class="message-text"></p>
+            <p class="message-time"></p>
         </div>
     </div>
 
