@@ -75,6 +75,10 @@ body {
 /* --- */
 
 /* ! TYPOGRAPHY */
+a:not(.activate-desktop a) {
+    text-decoration: none;
+}
+
 i {
     font-size: 22px;
     color: #b1b1b1;
@@ -235,12 +239,17 @@ input::placeholder {
 }
 
 /* ! MAIN */
+.history-chat {
+    display: none;
+}
+
 .message {
     min-width: 10%;
     max-width: 60%;
     padding: 10px 15px 5px 10px;
     margin: 5px;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .message-time {
@@ -265,8 +274,16 @@ input::placeholder {
 
 /* ! FOOTER */
 #footer i {
-    padding: 0 25px;
     color: #6b7376;
+}
+
+#emoji-btn, #mic-btn, #send-btn {
+    padding: 0 25px;
+}
+
+#send-btn {
+    display: none;
+    padding: 0 21.5px;
 }
 
 #footer input {

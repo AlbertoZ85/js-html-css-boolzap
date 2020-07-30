@@ -52,7 +52,7 @@
                     <span class="last-time">17:53</span>
                 </div>
 
-                <div class="contact-box active">
+                <div class="contact-box">
                     <div class="contact">
                         <img src="https://image.flaticon.com/icons/svg/163/163801.svg" alt="contact avatar">
                         <div class="contact-details">
@@ -85,7 +85,7 @@
                     <span class="last-time">17:53</span>
                 </div>
 
-                <div class="contact-box">
+                <!-- <div class="contact-box">
                     <div class="contact">
                         <img src="https://image.flaticon.com/icons/svg/3048/3048163.svg" alt="contact avatar">
                         <div class="contact-details">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <span class="last-time">17:53</span>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -151,12 +151,16 @@
             </div>
             <!-- MAIN -->
             <div id="main" class="clearfix">
-                <!-- ! SENT MESSAGE -->
+                <div class="history-chat active"></div>
+                <div class="history-chat"></div>
+                <div class="history-chat"></div>
+                <div class="history-chat"></div>
+                <!-- ! RECEIVED MESSAGE -->
                 <div class="message received">
                     <p class="message-text">Ciao, come stai? Volevo chiederti di passarmi gli appunti della lezione di stamattina, se non ti dispiace</p>
                     <p class="message-time">12:50</p>
                 </div>
-                <!-- ! RECEIVED MESSAGE -->
+                <!-- ! SENT MESSAGE -->
                 <div class="message sent">
                     <p class="message-text">Ciao! Bene, grazie, e tu? Ah giusto, eri impegnato stamattina. Sì certo, adesso te li passo</p>
                     <p class="message-time">12:50</p>
@@ -164,9 +168,16 @@
             </div>
             <!-- FOOTER -->
             <div id="footer">
-                <a href="#"><i class="far fa-smile"></i></a>
+                <div id="emoji-btn">
+                    <a href="#"><i class="far fa-smile"></i></a>
+                </div>
                 <input id="text-input" type="text" placeholder="Scrivi un messaggio">
-                <a href="#"><i id="mic" class="fas fa-microphone"></i></a>
+                <div id="mic-btn">
+                    <a href="#"><i class="fas fa-microphone"></i></a>
+                </div>
+                <div id="send-btn">
+                    <a href="#"><i class="fas fa-paper-plane"></i></a>
+                </div>
             </div>
         </div>
     </div>
