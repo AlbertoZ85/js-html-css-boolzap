@@ -52,18 +52,32 @@ body {
     overflow-y: auto;
 }
 
+#wa-start {
+    width: 65%;
+    height: 100%;
+    float: left;
+    background-image: url('https://web.whatsapp.com/img/intro-connection-light_c98cc75f2aa905314d74375a975d2cf2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8f9fb;
+}
+
 #chat {
     width: 65%;
     height: 100%;
     float: left;
+    display: none;
 }
+
+/* #chat.active {
+    display: block;
+} */
 
 #main {
     height: calc(100% - (70px + 70px));
-    padding: 0 60px;
+    background-color: rgba(214,219,215,1);
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     background-size: cover;
-    overflow-y: auto;
 }
 
 #footer {
@@ -205,8 +219,9 @@ input::placeholder {
 
 .contact-message {
     font-size: 14px;
-    /* overflow: hidden;
-    text-overflow: ellipsis; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .last-time {
@@ -215,7 +230,7 @@ input::placeholder {
     font-size: 12px;
 }
 
-/* ! CHAT */
+/* ! CHAT HEADER */
 .recipient {
     height: 100%;
     display: flex;
@@ -238,9 +253,16 @@ input::placeholder {
     color: grey;
 }
 
-/* ! MAIN */
+/* ! HISTORY CHAT */
 .history-chat {
     display: none;
+    height: 100%;
+    padding: 0 60px;
+    overflow-y: auto;
+}
+
+.history-chat.active {
+    display: block;
 }
 
 .message {
@@ -277,7 +299,7 @@ input::placeholder {
     color: #6b7376;
 }
 
-#emoji-btn, #mic-btn, #send-btn {
+#emoji-btn, #mic-btn {
     padding: 0 25px;
 }
 
@@ -292,6 +314,7 @@ input::placeholder {
     padding: 10px;
     font-size: 16px;
     border: none;
+    border-radius: 20px;
 }
 
 #footer input::placeholder {
