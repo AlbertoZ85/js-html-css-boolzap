@@ -69,10 +69,6 @@ body {
     display: none;
 }
 
-/* #chat.active {
-    display: block;
-} */
-
 #main {
     height: calc(100% - (70px + 70px));
     background-color: rgba(214,219,215,1);
@@ -193,6 +189,14 @@ input::placeholder {
 }
 
 /* ! CONTACTS */
+#zero-found {
+    font-size: 14px;
+    padding: 20px;
+    text-align: center;
+    color: #b1b1b1;
+    display: none;
+}
+
 .contact-box {
     padding: 8px 20px;
     border-bottom: 1px solid #eaeaea;
