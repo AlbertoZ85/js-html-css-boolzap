@@ -64,9 +64,12 @@ function chat() {
         // Invoco la funzione 'invia' per generare un messaggio 'sent' e cambio la visualizzazione del tasto 'send' con 'mic'
         invia(testo,'sent',thisChat);
         $('#send-btn,#mic-btn').toggle();
-        // Dopo 1 secondo la invoco nuovamente (con gli argomenti specifici per generare un messaggio 'received')
-        setTimeout(invia,1000,frasiRandom[numRandom(0,frasiRandom.length - 1)],'received',thisChat);
-        //
+        // Sposto in cima alla lista il contatto corrente
+        $('.contact-box').eq(thisChat).prependTo('#contacts-section');
+        // Dopo aver spostato in cima la chat corrispondente, invoco nuovamente la funzione 'invia' dopo 1 secondo (con gli argomenti specifici per generare un messaggio 'received')
+        $('.history-chat').eq(thisChat).prependTo('#main');
+        $('.last-seen').text('sta scrivendo...');
+        setTimeout(invia,1000,frasiRandom[numRandom(0,frasiRandom.length - 1)],'received',0);
     }
 }
 
@@ -83,20 +86,22 @@ function invia(messaggio,classe,indiceCorrente) {
     // Attribuzione della specifica classe in base alla natura del messaggio
     if (classe == 'sent') {
         copia.addClass('sent');
+        // Aggiornamento di anteprima messaggio e orario nella lista contatti
+        $('.contact-box').eq(indiceCorrente).find('.contact-message').text(messaggio);
+        $('.contact-box').eq(indiceCorrente).find('.last-time').text(orario);
     } else {
         copia.addClass('received');
-        $('.last-seen span').text(orario); // aggiornamento ultimo accesso //
+        // Controllo per il troncamento dei messaggi eccedenti un certo numero di caratteri e aggiornamento ultimi accessi
+        if (messaggio.length > 40) {
+            messaggio = messaggio.substring(0,40) + '...';
+        }
+        $('.contact-box').eq(0).find('.contact-message').text(messaggio);
+        $('.contact-box').eq(0).find('.last-time').text(orario);
+        $('.last-seen').text(`ultimo accesso oggi alle ${orario}`);
     }
     // Incollo il clone al DOM
     var originalChat = $('.history-chat').eq(indiceCorrente);
     originalChat.append(copia);
-    // Controllo per il troncamento dei messaggi eccedenti un certo numero di caratteri
-    if (messaggio.length > 40) {
-        messaggio = messaggio.substring(0,40) + '...';
-    }
-    // Aggiornamento di anteprima messaggio e orario nella lista contatti
-    $('.contact-box').eq(indiceCorrente).find('.contact-message').text(messaggio);
-    $('.contact-box').eq(indiceCorrente).find('.last-time').text(orario);
     // Aggiornamento scrollbar (col metodo prop() di jQuery 1.6)
     $(originalChat).animate({scrollTop: $(originalChat).prop('scrollHeight')},0);
     // $(originalChat).animate({scrollTop: $(originalChat)[0].scrollHeight},0) funziona, è di jQuery 1.5. $('#main').animate({scrollTop: $(copia).offset().top},0) non funzionava, metodo offset() è impreciso nel calcolo dell'altezza
